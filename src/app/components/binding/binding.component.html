@@ -1,0 +1,38 @@
+<p>Hola estoy en binding</p>
+<app-atributos></app-atributos>
+<section class="container bg-secondary bg-opacity-75 mt-3">
+    <div class="row">
+        <div class="col-12">
+            <h2>{{title}}</h2>
+            <h3>{{title}}</h3>
+            <h3>Interpolación</h3>
+            <p>La interpolacion es unidireccional y con las llaves me permite poner codigo de ts dentro de mi template</p>
+            <br>
+            <hr>
+            <h3>Property Binding</h3>
+            <p>El property binding es unidireccional y me permite asignar valores a propiedades de un elemento html</p>
+            <button class="btn btn-primary" [disabled]="isButtonDisabled">boton</button>
+            <br>
+            <br>
+            <a [href]="linkUrl" [target]="aperturaLink">Google</a>
+            <br>
+            <hr>
+            <h3>Event Binding</h3>
+            <p>El event binding es unidireccional y me permite ejecutar funciones de mi componente ts desde mi template</p>
+            <!--en este caso el method mostrar existe en ts en el componente y lo paso como callback al evento click, tengo que usar parentesis para envolver el evento-->
+            <button class="btn btn-primary" (click)="mostrar()">Evento</button>
+            <hr>
+            <br>
+            <img [src]="urlImagen" alt="nombre de la imagen" width="{{widthImagen}}">
+
+            <br>
+            <button class="btn btn-success mt-4" id="botonPrueba" (click)="mostrar()">boton prueba</button>
+
+            <p>Este es el nombre {{name}}</p>
+            <input type="text" [(ngModel)] ="name">
+
+           
+        </div>
+    </div>
+</section>
+

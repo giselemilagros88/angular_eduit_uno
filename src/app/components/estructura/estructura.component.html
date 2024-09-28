@@ -1,0 +1,82 @@
+<section class="container bg-secondary bg-opacity-75 mt-3">
+    <div class="row">
+        <div class="col-12">
+            <h2>Alumnos</h2>
+            <button class="btn btn-success mt-3 mb-3" (click)="agregarAlumno()">Agregar Alumno</button>
+
+            <!--<pre>
+                {{alumnos | json}}
+            </pre>-->
+       
+            <section *ngIf="alumnos.length > 0 && mostrar ; else  sinAlumnos"  class="container table-responsive">
+                
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">#Nro Legajo</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Nombre y Apellido</th>
+                            <th scope="col">Dni</th>
+                            <th scope="col">Programa?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       <tr *ngFor="let alumno of alumnos">
+                            <td appResaltar colorBase="orange">{{alumno.nroLegajo}}</td>
+                            <td><img [src]="alumno.imagen" [alt]="alumno.nombre" width="50"></td>
+                            <td appResaltar>{{alumno.nombre | uppercase}} {{alumno.apellido | uppercase}}</td>
+                            <td>{{alumno.dni}}</td>
+                            <!--TAREA IMPLEMENTAR ngClass si programa es true-->
+                            <!--TAREA IMPLEMENTAR ngClass si programa es true-->
+                            <td [ngClass]="{'colorVerde': alumno.programa, 'colorRojo': !alumno.programa}">{{alumno.programa ? 'Si' : 'No'}}</td>
+                            <!-- 
+                            programa es una clase y es verde
+                            noPrograma es una clase y es rojo
+                            <td [ngClass]="alumno.programa ? 'programa' : 'noPrograma'">
+                                {{alumno.programa ? 'Si' : 'No'}}
+                            </td>
+                            -->
+                        </tr>
+                    </tbody>
+                </table>
+
+            </section>
+            <ng-template #sinAlumnos >
+                <h3>No hay Alumnos ingresados</h3>
+            </ng-template>
+            <section *ngIf="!mostrar">
+
+            </section>
+
+           <!-- <section *ngIf="alumnos.length === 0 ">
+               <h3>No hay Alumnos ingresados</h3> 
+            </section>-->
+            <section class="container">
+                                
+                <div *ngFor="let alumno of alumnos; index as posicion" class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img [src]="alumno.imagen" class="img-fluid rounded-start" alt="{{alumno.nombre}}" width="200">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h3 appResaltar [colorBase]="colorResaltar" class="card-title">Legajo: {{alumno.nroLegajo}} Nombre y Apellido: {{alumno.nombre}} {{alumno.apellido}} </h3>
+                                <h3 class="card-title">Dni: {{alumno.dni}}</h3>
+                                <button class="btn btn-danger" (click)="eliminarAlumno(posicion)">Eliminar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <!--.table-responsive>table.table-dark>thead+tbody
+            <div class="table-responsive">
+                <table class="table-dark">
+                    <thead></thead>
+                    <tbody></tbody>
+                </table>
+            </div>-->
+        </div>
+    </div>
+</section>
+

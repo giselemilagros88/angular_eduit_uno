@@ -1,0 +1,20 @@
+<div class="card bg-danger bg-opacity-25 p-3 mt-3">
+    <h2>Componente de Usuarios con service http client</h2>
+    <hr>
+    <button class="btn btn-success" (click)="crearUsuario()">Agregar Nuevo Usuario</button>
+    <hr>
+    <h3>Listado de Usuarios</h3>
+    <ul>
+        <li *ngFor="let usuario of usuarios;  ">
+            <img [src]="usuario.imagen" [alt]="usuario.nombre" width="100px">
+            <b> Legajo: </b>{{usuario.id}},
+            <b> Nombre: </b>{{usuario.nombre}},
+            <b> Apellido: </b> {{usuario.apellido}}
+            <b> Programa:</b> {{usuario.programa}}
+            <hr>
+            <button class="btn btn-danger mx-2" (click)="eliminarUsuario(usuario.id)">Eliminar</button>
+            <button class="btn btn-warning" (click)="modificarUsuario(usuario)">Editar</button>
+            <hr>
+        </li>
+    </ul>
+</div>

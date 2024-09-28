@@ -1,0 +1,148 @@
+<section class="container bg-secondary bg-opacity-75 mt-3">
+    <div class="row">
+        <div class="col-12">
+            <h2>Componente Formularios</h2>
+            <section>
+                <!-- 
+                <h3>Template Driven: </h3>
+                <form #loginForm="ngForm" (ngSubmit)="enviar(loginForm)">
+                    <div class="form-group">
+                        <label for="nombre">*Nombre: </label>
+                        <input 
+                         #nombreControl = "ngModel"
+                         type="text" 
+                         class="form-control"
+                         id = "nombre"
+                         name = "nombre"
+                         [(ngModel)] = "formulario.nombre"
+                         autocomplete="off"
+                         required
+                         minlength="4"
+
+                        >
+                    </div>
+                    <div *ngIf="nombreControl.invalid && nombreControl.errors && nombreControl.dirty" class="alert alert-danger p-0">
+                        <p *ngIf="nombreControl.errors['required']">Campo Obligatorio</p>
+                        <p *ngIf="nombreControl.errors['minlength']">El minimo de caracteres para el nombre es 4</p>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="apellido">*Apellido: </label>
+                        <input 
+                         #apellidoControl = "ngModel"
+                         type="text" 
+                         class="form-control"
+                         id = "apellido"
+                         name = "apellido"
+                         [(ngModel)] = "formulario.apellido"
+                         autocomplete="off"
+                         required
+                        >
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="email">*Email: </label>
+                        <input 
+                         #emailControl = "ngModel"
+                         type="email" 
+                         class="form-control"
+                         id = "email"
+                         name = "email"
+                         [(ngModel)] = "formulario.email"
+                         autocomplete="off"
+                         required
+                        
+                        >
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="password">*Contraseña: </label>
+                        <input 
+                         #passwordControl = "ngModel"
+                         type="password" 
+                         class="form-control"
+                         id = "password"
+                         name = "password"
+                         [(ngModel)] = "formulario.password"
+                         autocomplete="off"
+                         required
+                        >
+                    </div>
+                   
+                    <br>
+                    <div class="form-group">
+                        <input 
+                        type="submit"
+                        class="btn"
+                        value="Enviar"
+                        [disabled] = "loginForm.invalid"
+                        [ngClass]="{'btn-secondary': loginForm.invalid , 'btn-success': !loginForm.invalid}"
+                        >
+
+                    </div>
+                </form>-->
+
+                <h3>Formulario Reactivo</h3>
+                <form [formGroup]="formulario" (ngSubmit)="enviarReactivo(formulario)">
+                    <div class="form-group">
+                        <label for="nombre">*Nombre: </label>
+                        <input 
+                         formControlName="nombre"
+                         type="text" 
+                         class="form-control"
+                         id = "nombre"
+                         autocomplete="off"
+                        >
+                    </div>
+                   
+                    <br>
+                    <div class="form-group">
+                        <label for="apellido">*Apellido: </label>
+                        <input 
+                        formControlName="apellido"
+                        type="text" 
+                         class="form-control"
+                         id = "apellido"
+                         autocomplete="off"
+                       
+                        >
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="email">*Email: </label>
+                        <input 
+                        formControlName="email"
+                         type="email" 
+                         class="form-control"
+                         id = "email"
+                         autocomplete="off"
+                        >
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="password">*Contraseña: </label>
+                        <input 
+                        formControlName="password"
+                         type="password" 
+                         class="form-control"
+                         id = "password"
+                         autocomplete="off"
+                        >
+                    </div>
+                   
+                    <br>
+                    <div class="form-group">
+                        <input 
+                        type="submit"
+                        class="btn"
+                        value="Enviar"
+                        [disabled] = "formulario.invalid"
+                        [ngClass]="{'btn-secondary': formulario.invalid , 'btn-success': !formulario.invalid}"
+                    >
+
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</section>

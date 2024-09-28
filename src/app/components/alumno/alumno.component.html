@@ -1,0 +1,13 @@
+<div class="card bg-success bg-opacity-25 p-3 mt-3">
+
+    <h2>Componente de Alumnos con service</h2>
+    <hr>
+    <h3>Listado de Alumnos</h3>
+    <ul>
+        <li *ngFor="let alumno of alumnos; ">
+            <b>Legajo: </b>{{alumno.nroLegajo}},
+            <b> Nombre: </b>{{alumno.nombre}},
+            <b> Apellido: </b> {{alumno.apellido}}
+        </li>
+    </ul>
+</div>

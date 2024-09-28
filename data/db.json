@@ -1,0 +1,52 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Veronicamodificado",
+      "apellido": "Lopez",
+      "dni": "35698745",
+      "imagen": "https://cdn4.iconfinder.com/data/icons/creative-business-concept-illustrations/255/Business_concepts-03-14-512.png",
+      "programa": false
+    },
+    {
+      "id": 2,
+      "nombre": "Mauromodificado",
+      "apellido": "Gonzalez",
+      "dni": "34888555",
+      "imagen": "https://cdn3.iconfinder.com/data/icons/business-1609/302/Design_set-02-34-512.png",
+      "programa": false
+    },
+    {
+      "id": 3,
+      "nombre": "Michael",
+      "apellido": "Pinilla",
+      "dni": "18569874",
+      "imagen": "https://cdn1.iconfinder.com/data/icons/social-media-influencer-1/272/Business_Concept_II-01-02-512.png",
+      "programa": true
+    },
+    {
+      "id": 4,
+      "nombre": "Gisele",
+      "apellido": "Banegas",
+      "dni": "3245878",
+      "imagen": "https://cdn4.iconfinder.com/data/icons/creative-business-concept-illustrations/255/Business_concepts-03-14-512.png",
+      "programa": false
+    },
+    {
+      "id": 5,
+      "nombre": "Maria",
+      "apellido": "Gimenez",
+      "dni": "35698788",
+      "imagen": "https://cdn4.iconfinder.com/data/icons/creative-business-concept-illustrations/255/Business_concepts-03-14-512.png",
+      "programa": false
+    },
+    {
+      "id": 6,
+      "nombre": "Maria",
+      "apellido": "Gimenez",
+      "dni": "35698788",
+      "imagen": "https://cdn4.iconfinder.com/data/icons/creative-business-concept-illustrations/255/Business_concepts-03-14-512.png",
+      "programa": false
+    }
+  ]
+}
